@@ -1,0 +1,11 @@
+#!/system/bin/sh
+
+SN="/data/serial_number"
+
+if [ -f "$SN" ]
+then
+	echo "$SN found."
+else
+	echo "$SN not found. Writing to /data/serial_number"
+	cat /sys/sys_info/serial_number > /data/serial_number
+fi;
